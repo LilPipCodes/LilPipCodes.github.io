@@ -83,12 +83,12 @@ function headerTemplate(){
       <li>
         <a href="#" class="nav-link">LABORATORY ACTIVITIES</a>
         <div class="dropdown" aria-hidden>
-          <a href="laboratory-active-directory.html">Active Directory: Creating Users</a>
-          <a href="laboratory-dhcp-role.html">DHCP Role and Joining Workstations in Domain</a>
-          <a href="laboratory-application-web-server.html">Application and Web Server</a>
-          <a href="laboratory-raid-installation.html">RAID Installation</a>
-          <a href="laboratory-group-policy-management.html">Group Policy Management</a>
-          <a href="laboratory-file-server.html">File Server</a>
+          <a href="laboratory-activity-1.html">Activity 1: Installation and Activation of Windows Server 2008</a>
+          <a href="laboratory-activity-2.html">Activity 2: Active Directory: Creating Users</a>
+          <a href="laboratory-activity-3.html">Activity 3: DHCP Joining Wordstation in Domain</a>
+          <a href="laboratory-activity-4.html">Activity 4: RAID Installation</a>
+          <a href="laboratory-activity-5.html">Activity 5: File Server</a>
+          <a href="laboratory-activity-6.html">Activity 6: Web Server</a>
         </div>
       </li>
 
@@ -113,7 +113,8 @@ function headerTemplate(){
         </div>
       </li>
 
-      <li>
+      <!-- Finals menu hidden as requested -->
+      <!--<li>
         <a href="#" class="nav-link">FINALS: TUP–TAGUIG DOMAIN</a>
         <div class="dropdown" aria-hidden>
             <a href="finals-part1.html">Part 1: Domain Controller</a>
@@ -126,7 +127,7 @@ function headerTemplate(){
             <a href="finals-part8.html">Part 8: Group Policies</a>
             <a href="finals-part9.html">Part 9: Windows Deployment</a>
         </div>
-      </li>
+      </li>-->
 
       <li><a href="about.html" class="nav-link">ABOUT</a></li>
     </ul>
@@ -145,19 +146,18 @@ function headerTemplate(){
         <a href="types.html">Types</a>
         <a href="management.html">Management</a>
         <hr>
-        <a href="laboratory-active-directory.html">Active Directory</a>
-        <a href="laboratory-dhcp-role.html">DHCP Role</a>
-        <a href="laboratory-application-web-server.html">App & Web Server</a>
-        <a href="laboratory-raid-installation.html">RAID</a>
-        <a href="laboratory-group-policy-management.html">Group Policy</a>
-        <a href="laboratory-file-server.html">File Server</a>
+        <a href="laboratory-activity-1.html">Activity 1: Installation and Activation of Windows Server 2008</a>
+        <a href="laboratory-activity-2.html">Activity 2: Active Directory: Creating Users</a>
+        <a href="laboratory-activity-3.html">Activity 3: DHCP Joining Wordstation in Domain</a>
+        <a href="laboratory-activity-4.html">Activity 4: RAID Installation</a>
+        <a href="laboratory-activity-5.html">Activity 5: File Server</a>
+        <a href="laboratory-activity-6.html">Activity 6: Web Server</a>
         <hr>
         <a href="windows-10.html">Windows 10</a>
         <a href="windows-11.html">Windows 11</a>
         <a href="windows-bootable-usb.html">Bootable USB</a>
         <a href="windows-bios-uefi.html">BIOS / UEFI</a>
         <hr>
-        <a href="finals-part1.html">Finals — Part 1</a>
         <a href="about.html">About</a>
       </div>
     </div>
