@@ -81,7 +81,7 @@ function headerTemplate(){
       </li>
 
       <li>
-        <a href="#" class="nav-link">LABORATORY ACTIVITIES</a>
+        <a href="#" class="nav-link">LAB ACTIVITIES</a>
         <div class="dropdown" aria-hidden>
           <a href="laboratory-activity-1.html">Activity 1: Installation and Activation of Windows Server 2008</a>
           <a href="laboratory-activity-2.html">Activity 2: Active Directory: Creating Users</a>
