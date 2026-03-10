@@ -127,6 +127,20 @@ function headerTemplate(){
         </div>
       </li>-->
 
+      <li>
+        <a href="#" class="nav-link">CASE STUDY</a>
+        <div class="dropdown" aria-hidden>
+          <a href="finals-part1.html">Part 1: Domain Controller</a>
+          <a href="finals-part2.html">Part 2: Adding Users</a>
+          <a href="finals-part3.html">Part 3: DHCP Server</a>
+          <a href="finals-part4.html">Part 4: File Sharing</a>
+          <a href="finals-part5.html">Part 5: RAID</a>
+          <a href="finals-part6.html">Part 6: Remote Desktop</a>
+          <a href="finals-part7.html">Part 7: Web Server</a>
+          <a href="finals-part8.html">Part 8: Group Policies</a>
+          <a href="finals-part9.html">Part 9: Windows Deployment</a>
+        </div>
+      </li>
       <li><a href="about.html" class="nav-link">ABOUT</a></li>
     </ul>
 
@@ -154,6 +168,18 @@ function headerTemplate(){
         <a href="windows-10.html">Windows 10</a>
         <a href="windows-11.html">Windows 11</a>
         <hr>
+        <a href="#">CASE STUDY</a>
+        <div class="dropdown" aria-hidden>
+          <a href="finals-part1.html">Part 1: Domain Controller</a>
+          <a href="finals-part2.html">Part 2: Adding Users</a>
+          <a href="finals-part3.html">Part 3: DHCP Server</a>
+          <a href="finals-part4.html">Part 4: File Sharing</a>
+          <a href="finals-part5.html">Part 5: RAID</a>
+          <a href="finals-part6.html">Part 6: Remote Desktop</a>
+          <a href="finals-part7.html">Part 7: Web Server</a>
+          <a href="finals-part8.html">Part 8: Group Policies</a>
+          <a href="finals-part9.html">Part 9: Windows Deployment</a>
+        </div>
         <a href="about.html">About</a>
       </div>
     </div>
