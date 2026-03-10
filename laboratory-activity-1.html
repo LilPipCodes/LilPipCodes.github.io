@@ -14,44 +14,112 @@
     </section>
 
     <section class="card-section reveal" style="margin-bottom:2rem;">
-      <h2 class="section-title" style="text-align:center;font-size:1.4rem;font-weight:700;">Layout Structure</h2>
-      <ul style="max-width:500px;margin:1.2em auto 0 auto;padding:0 1em;list-style:disc inside;text-align:left;">
-        <li>Centered Title</li>
-        <li>Big, bold, and centered</li>
-        <li>Example: DHCP Server Setup Tutorial</li>
-      </ul>
-    </section>
-
-    <section class="card-section reveal" style="margin-bottom:2rem;">
-      <h2 class="section-title" style="text-align:center;font-size:1.2rem;font-weight:700;">Step by Step Guide</h2>
-      <ol class="step-list" style="max-width:600px;margin:1.2em auto 0 auto;padding:0 1em;background:#fff;border-radius:1.2em;box-shadow:0 4px 24px #a259ff11;">
-        <li style="margin:1em 0;">Insert the Windows Server 2008 installation media and boot the system.</li>
-        <li style="margin:1em 0;">Follow the setup wizard to install the OS.</li>
-        <li style="margin:1em 0;">Enter the product key and activate Windows.</li>
-        <li style="margin:1em 0;">Complete the initial configuration tasks.</li>
-      </ol>
-    </section>
-
-    <section class="card-section reveal" style="margin-bottom:2rem;">
-      <h2 class="section-title" style="text-align:center;font-size:1.2rem;font-weight:700;">Important Links</h2>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:1em;">
-        <div class="link-btn-wrap" style="display:flex;align-items:center;gap:0.5em;">
-          <a href="https://learn.microsoft.com/en-us/windows-server/get-started/windows-server-2008-r2" target="_blank" class="btn btn-primary" style="font-size:1rem;">Microsoft Server 2008 Guide</a>
-          <button class="copy-btn" data-link="https://learn.microsoft.com/en-us/windows-server/get-started/windows-server-2008-r2" aria-label="Copy link" style="padding:8px 12px;border-radius:8px;border:none;background:#f3eaff;color:#7B4DFF;font-weight:600;cursor:pointer;box-shadow:0 2px 8px #a259ff22;">Copy</button>
-        </div>
+      <h2 class="section-title" style="text-align:center;font-size:1.4rem;font-weight:700;">Description</h2>
+      <div style="max-width:700px;margin:1.2em auto 0 auto;padding:0 1em;text-align:left;">
+        <p>✮⋆˙ Windows Server 2008 Installation Guide (Oracle VirtualBox)<br>
+        ˚ 𝜗𝜚˚⋆｡☆ Step-by-Step Virtual Machine Setup<br>
+        This guide explains how to install Windows Server 2008 in a virtual machine using Oracle VirtualBox for educational and lab purposes.<br>
+        ⊹˚. ♡.𖥔 ݁ ˖ Requirements<br>
+        1. Software<br>
+        Download and install:<br>
+        • Oracle VirtualBox<br>
+        https://www.virtualbox.org/<br>
+        • VirtualBox Extension Pack<br>
+        (Must match your VirtualBox version)<br>
+        2. Windows Server 2008 ISO<br>
+        You will need a Windows Server 2008 installation ISO file.<br>
+        Example sources include:<br>
+        ⦁ Microsoft evaluation downloads<br>
+        ⦁ Academic software portals<br>
+        ⦁ Your school-provided installer<br>
+        3. Recommended Virtual Machine Specs<br>
+        Minimum VM Requirements:<br>
+        • RAM: 2 GB<br>
+        • CPU: 2 cores recommended<br>
+        • Storage: 40 GB virtual disk<br>
+        • Graphics: 128 MB video memory<br>
+        ✮⋆˙ Step 1 — Create the Virtual Machine<br>
+        1. Open Oracle VirtualBox<br>
+        2. Click New<br>
+        3. Enter the following:<br>
+        Name: Windows Server 2008<br>
+        Type: Microsoft Windows<br>
+        Version: Windows 2008 (64-bit)<br>
+        1. Click Next<br>
+        ✮⋆˙ Step 2 — Allocate Memory<br>
+        Set RAM:<br>
+        Recommended: 2048 MB (2 GB)<br>
+        Click Next<br>
+        ✮⋆˙ Step 3 — Create Virtual Hard Disk<br>
+        1. Select Create a virtual hard disk now<br>
+        2. Choose VDI (VirtualBox Disk Image)<br>
+        3. Select Dynamically Allocated<br>
+        4. Set disk size:<br>
+        Recommended: 40 GB<br>
+        Click Create<br>
+        ✮⋆˙ Step 4 — Attach the Windows Server ISO<br>
+        1. Select your VM<br>
+        2. Click Settings<br>
+        3. Go to Storage<br>
+        4. Under Controller IDE, select Empty<br>
+        5. Click the disk icon<br>
+        6. Choose Choose a disk file<br>
+        7. Select your Windows Server 2008 ISO<br>
+        Click OK<br>
+        ✮⋆˙ Step 5 — Start Installation<br>
+        1. Click Start<br>
+        2. The Windows Server setup will load<br>
+        Choose:<br>
+        • Language<br>
+        • Time format<br>
+        Click Next<br>
+        ✮⋆˙ Step 6 — Install Windows<br>
+        1. Click Install Now<br>
+        2. Select the edition (example):<br>
+        • Windows Server 2008 Standard<br>
+        • Windows Server 2008 Enterprise<br>
+        1. Accept the License Terms<br>
+        2. Choose Custom (Advanced) installation<br>
+        ✮⋆˙ Step 7 — Partition Disk<br>
+        1. Select the virtual disk<br>
+        2. Click New<br>
+        3. Create a partition<br>
+        4. Click Next<br>
+        Windows will begin installing.<br>
+        The system will restart several times.<br>
+        ✮⋆˙ Step 8 — Administrator Setup<br>
+        After installation:<br>
+        1. Create an Administrator password<br>
+        2. Log into the server<br>
+        You will now reach the Windows Server 2008 desktop.<br>
+        ✮⋆˙ Step 9 — Install VirtualBox Guest Additions (Recommended)<br>
+        To improve VM performance:<br>
+        1. Click Devices<br>
+        2. Select Insert Guest Additions CD Image<br>
+        3. Run VBoxWindowsAdditions.exe<br>
+        4. Restart the VM<br>
+        Benefits:<br>
+        • Better graphics<br>
+        ✮⋆˙ Legitimate Activation Options<br>
+        You can activate Windows Server using:<br>
+        • A valid product key from Microsoft<br>
+        • A school/enterprise volume license<br>
+        • A Microsoft evaluation license (time-limited)<br>
+        Activation is done through:<br>
+        Control Panel → System → Activate Windows<br>
+        ⊹˚. ♡.𖥔 ݁ ˖ Reminder<br>
+        This setup is intended for educational and laboratory purposes only, such as learning:<br>
+        • Active Directory<br>
+        • DHCP<br>
+        • Web Server (IIS)<br>
+        • Group Policy<br>
       </div>
     </section>
 
     <section class="card-section reveal" style="margin-bottom:2rem;">
-      <h2 class="section-title" style="text-align:center;font-size:1.2rem;font-weight:700;">YouTube Link</h2>
-      <div style="display:flex;flex-direction:column;align-items:center;">
-        <div class="video-embed" style="width:100%;max-width:600px;margin:0 auto 1em auto;">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" frameborder="0" allowfullscreen style="border-radius:1em;"></iframe>
-        </div>
-        <div style="margin-bottom:1em;">
-          <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" class="btn btn-primary" style="font-size:1rem;">Watch on YouTube</a>
-          <button class="copy-btn" data-link="https://www.youtube.com/watch?v=VIDEO_ID" aria-label="Copy link" style="padding:8px 12px;border-radius:8px;border:none;background:#f3eaff;color:#7B4DFF;font-weight:600;cursor:pointer;box-shadow:0 2px 8px #a259ff22;">Copy</button>
-        </div>
+      <h2 class="section-title" style="text-align:center;font-size:1.2rem;font-weight:700;">YouTube Tutorial</h2>
+      <div class="video-embed" style="width:100%;max-width:600px;margin:0 auto 1em auto;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/koHwFfxVYIg" title="Windows Server 2008 Installation" frameborder="0" allowfullscreen style="border-radius:1em;"></iframe>
       </div>
     </section>
   </main>

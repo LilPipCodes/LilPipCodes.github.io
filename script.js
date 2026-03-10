@@ -87,8 +87,10 @@ function headerTemplate(){
           <a href="laboratory-activity-2.html">Activity 2: Active Directory: Creating Users</a>
           <a href="laboratory-activity-3.html">Activity 3: DHCP Joining Wordstation in Domain</a>
           <a href="laboratory-activity-4.html">Activity 4: RAID Installation</a>
-          <a href="laboratory-activity-5.html">Activity 5: File Server</a>
+          <a href="laboratory-activity-5.html">Activity 5: Group Policy Management</a>
           <a href="laboratory-activity-6.html">Activity 6: Web Server</a>
+          <a href="laboratory-activity-7.html">Activity 7: File Server</a>
+          <a href="laboratory-activity-8.html">Activity 8: WDS</a>
         </div>
       </li>
 
@@ -162,8 +164,10 @@ function headerTemplate(){
         <a href="laboratory-activity-2.html">Activity 2: Active Directory: Creating Users</a>
         <a href="laboratory-activity-3.html">Activity 3: DHCP Joining Wordstation in Domain</a>
         <a href="laboratory-activity-4.html">Activity 4: RAID Installation</a>
-        <a href="laboratory-activity-5.html">Activity 5: File Server</a>
+        <a href="laboratory-activity-5.html">Activity 5: Group Policy Management</a>
         <a href="laboratory-activity-6.html">Activity 6: Web Server</a>
+        <a href="laboratory-activity-7.html">Activity 7: File Server</a>
+        <a href="laboratory-activity-8.html">Activity 8: WDS</a>
         <hr>
         <a href="windows-10.html">Windows 10</a>
         <a href="windows-11.html">Windows 11</a>

@@ -10,55 +10,59 @@
   <header id="site-header"></header>
   <main class="container">
     <section class="card-section reveal" style="margin-bottom:2rem;">
-      <h1 class="activity-title" style="text-align:center;font-size:2.5rem;font-weight:800;margin-bottom:0.5em;">Activity 3: DHCP Joining Wordstation in Domain</h1>
+      <h1 class="activity-title" style="text-align:center;font-size:2.5rem;font-weight:800;margin-bottom:0.5em;">Activity 3: DHCP Joining Workstation in Domain</h1>
     </section>
 
     <section class="card-section reveal" style="margin-bottom:2rem;">
-      <h2 class="section-title" style="text-align:center;font-size:1.4rem;font-weight:700;">Layout Structure</h2>
-      <ul style="max-width:500px;margin:1.2em auto 0 auto;padding:0 1em;list-style:disc inside;text-align:left;">
-        <li>Centered Title</li>
-        <li>Big, bold, and centered</li>
-        <li>Example: DHCP Server Setup Tutorial</li>
-      </ul>
-    </section>
-
-    <section class="card-section reveal" style="margin-bottom:2rem;">
-      <h2 class="section-title" style="text-align:center;font-size:1.2rem;font-weight:700;">Step by Step Guide</h2>
-      <ol class="step-list" style="max-width:600px;margin:1.2em auto 0 auto;padding:0 1em;background:#fff;border-radius:1.2em;box-shadow:0 4px 24px #a259ff11;">
-        <li style="margin:1em 0;">Open Server Manager and add the DHCP role.</li>
-        <li style="margin:1em 0;">Configure a new DHCP scope for your network.</li>
-        <li style="margin:1em 0;">Authorize the DHCP server in Active Directory.</li>
-        <li style="margin:1em 0;">Join the workstation to the domain using the assigned IP.</li>
-      </ol>
-    </section>
-
-    <section class="card-section reveal" style="margin-bottom:2rem;">
-      <h2 class="section-title" style="text-align:center;font-size:1.2rem;font-weight:700;">Important Links</h2>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:1em;">
-        <div class="link-btn-wrap" style="display:flex;align-items:center;gap:0.5em;">
-          <a href="https://learn.microsoft.com/en-us/windows-server/networking/technologies/dhcp/dhcp-top" target="_blank" class="btn btn-primary" style="font-size:1rem;">Microsoft DHCP Guide</a>
-          <button class="copy-btn" data-link="https://learn.microsoft.com/en-us/windows-server/networking/technologies/dhcp/dhcp-top" aria-label="Copy link" style="padding:8px 12px;border-radius:8px;border:none;background:#f3eaff;color:#7B4DFF;font-weight:600;cursor:pointer;box-shadow:0 2px 8px #a259ff22;">Copy</button>
-        </div>
+      <h2 class="section-title" style="text-align:center;font-size:1.4rem;font-weight:700;">Description</h2>
+      <div style="max-width:700px;margin:1.2em auto 0 auto;padding:0 1em;text-align:left;">
+        <p>𐙚 ‧₊˚ ⋅ III. DHCP Role & Joining Workstations to Domain<br>
+        This activity focuses on installing and configuring a DHCP Server, setting up network scopes for different student groups, and connecting client computers to the domain. It ensures proper IP address assignment and domain connectivity for Windows XP and Windows 7 clients.</p>
+        <ul>
+          <li>Role Installed: DHCP Server</li>
+          <li>Network Scopes:
+            <ul>
+              <li>Class A Network: 10.0.0.0 /8 (Male students)</li>
+              <li>Class B Network: 172.16.0.0 /16 (Female students)</li>
+            </ul>
+          </li>
+          <li>Additional Settings:
+            <ul>
+              <li>Server IP: Last usable IP address</li>
+              <li>Exclusion: First & Last 10 usable IP addresses</li>
+              <li>Lease Time: 16 hours</li>
+              <li>Router: Server IP Address</li>
+              <li>DNS: Server IP Address & 8.8.8.8</li>
+            </ul>
+          </li>
+          <li>Client Systems Created:
+            <ul>
+              <li>Windows XP – LASTNAME-XP</li>
+              <li>Windows 7 – LASTNAME-WIN7</li>
+            </ul>
+          </li>
+          <li>Requirements:
+            <ul>
+              <li>Windows XP must receive Class A IP Address</li>
+              <li>Windows 7 must receive Class B IP Address</li>
+              <li>Login 5 student accounts per section per OS</li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </section>
 
     <section class="card-section reveal" style="margin-bottom:2rem;">
-      <h2 class="section-title" style="text-align:center;font-size:1.2rem;font-weight:700;">YouTube Link</h2>
-      <div style="display:flex;flex-direction:column;align-items:center;">
-        <div class="video-embed" style="width:100%;max-width:600px;margin:0 auto 1em auto;">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" frameborder="0" allowfullscreen style="border-radius:1em;"></iframe>
-        </div>
-        <div style="margin-bottom:1em;">
-          <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" class="btn btn-primary" style="font-size:1rem;">Watch on YouTube</a>
-          <button class="copy-btn" data-link="https://www.youtube.com/watch?v=VIDEO_ID" aria-label="Copy link" style="padding:8px 12px;border-radius:8px;border:none;background:#f3eaff;color:#7B4DFF;font-weight:600;cursor:pointer;box-shadow:0 2px 8px #a259ff22;">Copy</button>
-        </div>
+      <h2 class="section-title" style="text-align:center;font-size:1.2rem;font-weight:700;">YouTube Tutorial</h2>
+      <div class="video-embed" style="width:100%;max-width:600px;margin:0 auto 1em auto;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VdvVx7IMr_k" title="DHCP Domain Join" frameborder="0" allowfullscreen style="border-radius:1em;"></iframe>
       </div>
     </section>
   </main>
   <footer id="site-footer"></footer>
   <script src="script.js"></script>
   <script>
-    // Copy button logic
+
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('.copy-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {

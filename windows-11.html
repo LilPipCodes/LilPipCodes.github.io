@@ -9,30 +9,50 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <header id="site-header"></header>
+  <header id="site-header" class="modern-header">
+    <div class="header-title-wrap">
+      <h1 class="course-title">ITOS22 0–T: Final Project</h1>
+    </div>
+    <nav class="main-nav">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="laboratory-active-directory.html">Lab Activities</a></li>
+        <li><a href="windows-10.html">Windows Installation</a></li>
+        <li><a href="finals-part1.html">Finals: TUP–Taguig Domain</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Font Awesome CDN for future icon use -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <main class="container">
-    <h1>Windows 11</h1>
-    <p class="lead">Modern Windows installation with UEFI and TPM considerations.</p>
-
-    <h2>System Requirements</h2>
-    <ul>
-      <li>64-bit CPU, 4 GB RAM, TPM 2.0 recommended</li>
-    </ul>
-
-    <h2>Installation Steps</h2>
-    <ol>
-      <li>Prepare UEFI-bootable USB, ensure Secure Boot and TPM requirements met.</li>
-      <li>Follow setup and sign in with Microsoft account if desired.</li>
-    </ol>
-
-    <h2>Warnings</h2>
-    <p>Check hardware compatibility and firmware settings (BIOS/UEFI).</p>
-
-    <h3>Screenshots</h3>
-    <div class="video-embed" style="min-height:160px;background:#eee;display:flex;align-items:center;justify-content:center;color:var(--muted)">Screenshot placeholder</div>
-
-    <h3>Tutorial</h3>
-    <div class="video-embed"><iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Windows 11"></iframe></div>
+    <section class="card-section reveal" style="margin-bottom:2rem;">
+      <h1 class="activity-title" style="text-align:center;font-size:2.5rem;font-weight:800;margin-bottom:0.5em;">Windows 11 Installation</h1>
+    </section>
+    <section class="card-section reveal" style="margin-bottom:2rem;">
+      <h2 class="section-title" style="text-align:center;font-size:1.4rem;font-weight:700;">Description</h2>
+      <div style="max-width:700px;margin:1.2em auto 0 auto;padding:0 1em;text-align:left;">
+        <p>𐙚 ‧₊˚ ⋅ ✮⋆˙<br>
+      Windows 11 introduces a refreshed interface, improved productivity tools, and modern system features. This tutorial demonstrates installing Windows 11 inside a Virtual Machine environment. ლ(╹◡╹ლ)</p>
+        <h3 style="margin-top:1.5em;font-size:1.1rem;font-weight:600;">Quick Installation Guide:</h3>
+        <ul style="margin:1em 0 0 1em;padding-left:1em;">
+          <li>Create a Windows 11 VM in VirtualBox.</li>
+          <li>Allocate 4–8GB RAM.</li>
+          <li>Create a 60GB virtual disk.</li>
+          <li>Mount the Windows 11 ISO.</li>
+          <li>Start the VM and bypass TPM if required.</li>
+          <li>Follow the installation wizard.</li>
+          <li>Complete setup and restart. ✦</li>
+        </ul>
+      </div>
+    </section>
+ 
+    <section class="card-section reveal" style="margin-bottom:2rem;">
+      <h2 class="section-title" style="text-align:center;font-size:1.2rem;font-weight:700;">YouTube Tutorial</h2>
+      <div class="video-embed" style="width:100%;max-width:600px;margin:0 auto 1em auto;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" title="Windows 10 Installation" frameborder="0" allowfullscreen style="border-radius:1em;"></iframe>
+      </div>
+    </section>
   </main>
   <footer id="site-footer"></footer>
 </body>

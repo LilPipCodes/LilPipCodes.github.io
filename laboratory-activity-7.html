@@ -3,14 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Activity 7: Web Server</title>
+  <title>Activity 7: File Server</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header id="site-header"></header>
   <main class="container">
-    <h1>Activity 7: Web Server</h1>
-    <!-- Content goes here -->
+    <section class="card-section reveal" style="margin-bottom:2rem;">
+      <h1 class="activity-title" style="text-align:center;font-size:2.5rem;font-weight:800;margin-bottom:0.5em;">Activity 7: File Server</h1>
+    </section>
+    <section class="card-section reveal" style="margin-bottom:2rem;">
+      <h2 class="section-title" style="text-align:center;font-size:1.4rem;font-weight:700;">Description</h2>
+      <div style="max-width:700px;margin:1.2em auto 0 auto;padding:0 1em;text-align:left;">
+        <p>𐙚 ‧₊˚ ⋅ VII. File Server Configuration<br>
+        In this section, we install and configure File Services in Windows Server to create a centralized storage system for users in the domain network. A file server allows multiple users to store, access, and manage files securely while administrators control permissions and file access.<br>
+        (～￣▽￣)～ File servers are commonly used in schools, companies, and organizations to manage shared resources efficiently.<br>
+        .✦ ݁˖ Tasks Performed<br>
+        • Install File Services Role<br>
+        • Create shared folders with specific permissions and file restrictions for different directories<br>
+        We configure File Services to manage shared folders and permissions.<br>
+        ✦ Created Shared Folders:<br>
+        📁 Public Folder<br>
+        Permissions: Read / Write<br>
+        Users: All<br>
+        Allowed Files: All except *.exe, *.com, *.vb, *.vbs<br>
+        📁 VB.Net Folder<br>
+        Permissions: Read / Write<br>
+        Allowed Files: *.zip, *.rar<br>
+        📁 C_Programs Folder<br>
+        Permissions: Read / Write<br>
+        Allowed Files: *.c, *.cpp<br>
+        📁 Surname_Section Folder<br>
+        Permissions: Full Control<br>
+        Users: Domain Users<br>
+        Allowed Files: *.c *.cpp *.pdf *.rar *.docx *.ppt *.dwg<br>
+        📁 PHOTO_Male & PHOTO_FEMALE<br>
+        Permissions: Read / Write<br>
+        Access based on user gender<br>
+        Allowed Files: *.jpg *.gif *.png<br>
+        ლ(╹◡╹ლ) This setup demonstrates centralized file storage and permission management.
+        </p>
+      </div>
+    </section>
+
+    <section class="card-section reveal" style="margin-bottom:2rem;">
+      <h2 class="section-title" style="text-align:center;font-size:1.2rem;font-weight:700;">YouTube Tutorial</h2>
+      <div class="video-embed" style="width:100%;max-width:600px;margin:0 auto 1em auto;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/KBGyD7wfeSw" title="File Server" frameborder="0" allowfullscreen style="border-radius:1em;"></iframe>
+      </div>
+    </section>
   </main>
   <footer id="site-footer"></footer>
   <script src="script.js"></script>
