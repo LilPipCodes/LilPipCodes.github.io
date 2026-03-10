@@ -108,8 +108,6 @@ function headerTemplate(){
           <a href="windows-8.html">Windows 8</a>
           <a href="windows-10.html">Windows 10</a>
           <a href="windows-11.html">Windows 11</a>
-          <a href="windows-bootable-usb.html">Bootable USB Creation</a>
-          <a href="windows-bios-uefi.html">BIOS / UEFI Configuration</a>
         </div>
       </li>
 
@@ -155,8 +153,6 @@ function headerTemplate(){
         <hr>
         <a href="windows-10.html">Windows 10</a>
         <a href="windows-11.html">Windows 11</a>
-        <a href="windows-bootable-usb.html">Bootable USB</a>
-        <a href="windows-bios-uefi.html">BIOS / UEFI</a>
         <hr>
         <a href="about.html">About</a>
       </div>
