@@ -26,6 +26,56 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" title="Group Policies" frameborder="0" allowfullscreen style="border-radius:1em;"></iframe>
       </div>
     </section>
+
+    <section class="card-section reveal" style="margin-bottom:2rem;">
+      <h2 class="section-title" style="text-align:center;font-size:1.2rem;font-weight:700;">Step-by-Step Group Policy Implementation</h2>
+      <div style="max-width:700px;margin:1.2em auto 0 auto;padding:0 1em;text-align:left;">
+        <h3>I. Department-Specific Desktop Wallpaper</h3>
+        <ol>
+          <li>For each department, create a GPO (e.g., <strong>ACADEMIC WALLPAPER</strong>).</li>
+          <li>Navigate to: <em>User Configuration &rarr; Policies &rarr; Administrative Templates &rarr; Desktop &rarr; Desktop &rarr; Desktop Wallpaper</em>.</li>
+          <li>Edit the policy: <strong>Enable</strong> &rarr; <strong>Wallpaper Name</strong>: (Path of the Wallpaper) &rarr; Apply &rarr; OK.</li>
+          <li>Repeat for each department with their respective wallpaper.</li>
+        </ol>
+        <h3>II. Restrict/Disable the Following via GPOs</h3>
+        <ul>
+          <li>Create two GPOs in the domain: <strong>Users Policy</strong> and <strong>Admin Policy</strong>.</li>
+          <li><strong>If in User Policy: Enable</strong> | <strong>If in Admin Policy: Disable</strong></li>
+        </ul>
+        <h4>Users Policy Settings</h4>
+        <ol type="a">
+          <li>Enable: Prohibit access to Control Panel and PC settings<br><em>User Configuration &rarr; Policies &rarr; Admin Templates &rarr; Control Panel</em></li>
+          <li>Enable: Network security: Do not store LAN manager hash value on next password change<br><em>Computer Configuration &rarr; Policies &rarr; Windows Settings &rarr; Security Settings &rarr; Local Policies &rarr; Security Options</em></li>
+          <li>Enable: Prevent access to the command prompt<br><em>User Configuration &rarr; Policies &rarr; Admin Templates &rarr; System</em></li>
+          <li>Enable: No auto-restart with logged on users for scheduled automatic updates installations<br><em>Computer Configuration &rarr; Policies &rarr; Admin Templates &rarr; Windows Components &rarr; Windows Update</em></li>
+          <li>Enable: All removable storage classes: Deny all access<br><em>Computer Configuration &rarr; Policies &rarr; Admin Templates &rarr; System &rarr; Removable Storage Access</em></li>
+          <li>Enable: Prohibit user install<br><em>Computer Configuration &rarr; Policies &rarr; Admin Templates &rarr; Windows Components &rarr; Windows Installer</em></li>
+          <li>Disable: Accounts: Guest account status<br><em>Computer Configuration &rarr; Policies &rarr; Windows Settings &rarr; Security Settings &rarr; Account Policies &rarr; Security Options</em></li>
+          <li>Set minimum password length to at least 12 characters<br><em>Computer Configuration &rarr; Policies &rarr; Windows Settings &rarr; Security Settings &rarr; Local Policies &rarr; Password Policy</em></li>
+          <li>Set maximum password age to 42 days<br><em>Computer Configuration &rarr; Policies &rarr; Windows Settings &rarr; Security Settings &rarr; Local Policies &rarr; Password Policy</em></li>
+          <li>Enable: Audit directory service access (success)<br><em>Computer Configuration &rarr; Policies &rarr; Windows Settings &rarr; Security Settings &rarr; Local Policies &rarr; Audit Policy</em></li>
+          <li>Set account lockout duration: 30 minutes<br><em>Computer Configuration &rarr; Policies &rarr; Windows Settings &rarr; Security Settings &rarr; Account Policies &rarr; Account Lockout Policy</em></li>
+          <li>Set account lockout threshold: 3 invalid logon attempts<br><em>Computer Configuration &rarr; Policies &rarr; Windows Settings &rarr; Security Settings &rarr; Account Policies &rarr; Account Lockout Policy</em></li>
+          <li>Reset account lockout counter after: 30 minutes<br><em>Computer Configuration &rarr; Policies &rarr; Windows Settings &rarr; Security Settings &rarr; Account Policies &rarr; Account Lockout Policy</em></li>
+          <li>Remove links and access to Windows Update<br><em>User Configuration &rarr; Policies &rarr; Admin Templates &rarr; Network &rarr; Start Menu and Taskbar</em></li>
+          <li>Remove network connections from the Start Menu<br><em>User Configuration &rarr; Policies &rarr; Admin Templates &rarr; Network &rarr; Start Menu and Taskbar</em></li>
+          <li>Remove Help menu from the Start Menu<br><em>User Configuration &rarr; Policies &rarr; Admin Templates &rarr; Network &rarr; Start Menu and Taskbar</em></li>
+          <li>Remove Run menu from the Start Menu<br><em>User Configuration &rarr; Policies &rarr; Admin Templates &rarr; Network &rarr; Start Menu and Taskbar</em></li>
+          <li>Remove My Pictures icon menu from the Start Menu<br><em>User Configuration &rarr; Policies &rarr; Admin Templates &rarr; Network &rarr; Start Menu and Taskbar</em></li>
+          <li>Remove My Music icon menu from the Start Menu<br><em>User Configuration &rarr; Policies &rarr; Admin Templates &rarr; Network &rarr; Start Menu and Taskbar</em></li>
+          <li>Remove My Network Places icon menu from the Start Menu<br><em>User Configuration &rarr; Policies &rarr; Admin Templates &rarr; Network &rarr; Start Menu and Taskbar</em></li>
+          <li>Add Logoff on the Start Menu: Enable<br><em>User Configuration &rarr; Policies &rarr; Admin Templates &rarr; Network &rarr; Start Menu and Taskbar</em></li>
+          <li>Remove Task Manager from Ctrl+Alt+Del<br><em>User Configuration &rarr; Policies &rarr; Admin Templates &rarr; System &rarr; Ctrl+Alt+Del Options</em></li>
+          <li>Internet Explorer browser title: Title bar text: &lt;domain name&gt;<br><em>User Configuration &rarr; Policies &rarr; Windows Settings &rarr; Internet Explorer Maintenance &rarr; Browser User Interface</em></li>
+          <li>Prohibit access to properties of components of a LAN connection<br><em>User Configuration &rarr; Policies &rarr; Admin Templates &rarr; Network &rarr; Network Connections</em></li>
+          <li>Prevent access to the command prompt<br><em>User Configuration &rarr; Policies &rarr; Admin Templates &rarr; System</em></li>
+          <li>Prevent access to registry editing tools<br><em>User Configuration &rarr; Policies &rarr; Admin Templates &rarr; System</em></li>
+          <li>Prohibit access to the Control Panel<br><em>User Configuration &rarr; Policies &rarr; Admin Templates &rarr; Control Panel</em></li>
+        </ol>
+        <p style="margin-top:1.5em;"><strong>Note:</strong> For each setting, <strong>Enable</strong> in User Policy and <strong>Disable</strong> in Admin Policy as required.</p>
+      </div>
+    </section>
+    </section>
   </main>
   <footer id="site-footer"></footer>
 </body>

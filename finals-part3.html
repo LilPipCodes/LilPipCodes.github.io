@@ -18,6 +18,96 @@
       <h2 class="section-title" style="text-align:center;font-size:1.4rem;font-weight:700;">Description</h2>
       <div style="max-width:700px;margin:1.2em auto 0 auto;padding:0 1em;text-align:left;">
         <p>Configure DHCP services, scopes, and reservations to provide network addressing for the domain. Configure network roles and ensure clients receive proper settings.</p>
+        <h3>DHCP Server Requirements</h3>
+        <ul>
+          <li>IP Block: <strong>172.31.0.0 /16</strong> & <strong>10.0.0.0 /8</strong></li>
+          <li>Router IP address is valid IP address</li>
+          <li>DNS server IP address: Same as DHCP server + Google (8.8.8.8, 8.8.4.4) & OpenDNS (208.67.222.222, 208.67.220.220)</li>
+          <li>IP address lease expires every 8 hours</li>
+          <li>Do NOT distribute first 30 and last 30 valid IP addresses</li>
+        </ul>
+        <h3>Setup Steps</h3>
+        <ol>
+          <li>Clone Windows Server 2008</li>
+          <li>Clone Windows 7 & XP</li>
+          <li>Select WS2008 → Settings → Network → Change Adapter 1 & 2 to Internal Network</li>
+          <li>Configure WS2008 Network:
+            <ul>
+              <li>Go to WS2008 settings → Network → Rename Adapter 1 as "XPFEMALENET"</li>
+              <li>Rename Adapter 2 as "7MALENET"</li>
+            </ul>
+          </li>
+          <li>Go to WSXP settings → Network → Rename Adapter 1 as "XPFEMALENET"</li>
+          <li>Go to WS7 settings → Network → Rename Adapter 1 as "7MALENET"</li>
+          <li>Start WS2008</li>
+          <li>Configure Networking: Control Panel → Network & Internet → Network Connections → Change Adapter Settings → Right click LAN → Properties</li>
+          <li>Set IPv4 Properties:
+            <ul>
+              <li><strong>Local Area Connection 1 (Female):</strong><br>IP: 172.31.0.31<br>Subnet: 255.255.255.0<br>Gateway: 172.31.0.32<br>Preferred DNS: 127.0.0.1</li>
+              <li><strong>Local Area Connection 2 (Male):</strong><br>IP: 10.0.0.31<br>Subnet: 255.0.0.0<br>Gateway: 10.0.0.32<br>Preferred DNS: 127.0.0.1</li>
+            </ul>
+          </li>
+          <li>Add DHCP Server Role: Start → Administrative Tools → Server Manager → Roles → Add Roles → Select DHCP SERVER</li>
+          <li>Validate settings and install DHCP</li>
+          <li>Open DHCP: Start → Administrative Tools → DHCP</li>
+          <li>Create New Scopes:
+            <ul>
+              <li><strong>Class A Female-XP Scope:</strong><br>Scope Name: Class A Female-XP<br>Start IP: 172.31.0.1 | End IP: 172.31.0.254<br>Subnet Mask: 255.255.255.0<br>Exclusions: 172.31.0.1-30 (first 30) & 172.31.0.225-254 (last 30)<br>Duration: 8 hours<br>Default Gateway: 172.31.0.32<br>Domain: tupt.edu.ph</li>
+              <li><strong>Class B Male-7 Scope:</strong><br>Scope Name: Class B Male-7<br>Start IP: 10.0.0.1 | End IP: 10.0.0.254<br>Subnet Mask: 255.0.0.0<br>Exclusions: 10.0.0.1-30 (first 30) & 10.0.0.225-254 (last 30)<br>Duration: 8 hours<br>Default Gateway: 10.0.0.32<br>Domain: tupt.edu.ph</li>
+            </ul>
+          </li>
+          <li>Configure DNS Servers for both scopes (Remove 127.0.0.1):
+            <ul>
+              <li>Primary DNS: 8.8.8.8 (Google)</li>
+              <li>Secondary DNS: 8.8.4.4 (Google)</li>
+              <li>Tertiary DNS: 208.67.222.222 (OpenDNS)</li>
+              <li>Quaternary DNS: 208.67.220.220 (OpenDNS)</li>
+            </ul>
+          </li>
+          <li><strong>Configuring Windows XP</strong>
+            <ul>
+              <li>Start Windows XP VM while keeping Windows Server 2008 running</li>
+              <li>Rename computer: START → Right click My Computer → Properties → Computer Name → Change → "LASTNAME_CS-XP" (e.g., CADAO_CS-XP)</li>
+              <li>Join domain: Domain: tupt.edu.ph → Click OK</li>
+              <li>Enter credentials:<br>Username: Administrator<br>Password: (Your WS2008 admin password)</li>
+              <li>Welcome message appears → Click OK → Restart</li>
+              <li>Log in with Administrator account (TUPT\\administrator) and test with another domain user</li>
+            </ul>
+          </li>
+          <li><strong>Configuring Windows 7</strong>
+            <ul>
+              <li>Repeat all steps from Windows XP configuration but with Windows 7</li>
+              <li>Rename computer as: "LASTNAME_CS-WIN7"</li>
+              <li>Join domain: tupt.edu.ph with same credentials</li>
+              <li>Log in as TUPT\\administrator and test with another domain user</li>
+            </ul>
+          </li>
+          <li><strong>Connecting Windows XP & 7 using DHCP</strong>
+            <ul>
+              <li>Start WS2008, WXP & W7</li>
+              <li>Check Address Leases: WS2008 → Start → Administrative Tools → DHCP → Expand Domain → Expand IPv4 → Click Address Leases</li>
+              <li>Class B Male network should show W7 connected</li>
+              <li>Class A Female network should show WXP connected</li>
+              <li>Verify on W7: Command Prompt → ipconfig /all<br>DHCP should be enabled with IP from Class B Male network</li>
+              <li>Verify on WXP with same command (should show Class A Female IP)</li>
+            </ul>
+          </li>
+          <li><strong>Troubleshooting: Domain Connection Errors</strong>
+            <ul>
+              <li>If error "Cannot connect to your domain controller" occurs:</li>
+              <li>Verify DHCP → Class A or B → Scope Options → 006 DNS Servers has NO 127.0.0.1</li>
+              <li>On Windows XP or Windows 7, run in Command Prompt:
+                <ul>
+                  <li>ipconfig /release</li>
+                  <li>ipconfig /renew</li>
+                  <li>ipconfig /all</li>
+                </ul>
+              </li>
+              <li>Verify DNS servers in ipconfig output match scope options</li>
+              <li>Attempt to reconnect to domain</li>
+            </ul>
+          </li>
+        </ol>
       </div>
     </section>
     <section class="card-section reveal" style="margin-bottom:2rem;">

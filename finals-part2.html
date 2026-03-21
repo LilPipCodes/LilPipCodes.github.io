@@ -18,6 +18,71 @@
       <h2 class="section-title" style="text-align:center;font-size:1.4rem;font-weight:700;">Description</h2>
       <div style="max-width:700px;margin:1.2em auto 0 auto;padding:0 1em;text-align:left;">
         <p>Hands-on: creating user accounts, organizational units, and basic user management in Active Directory. Implement OU, users, and Group Policies for the scenario.</p>
+        <h3>Domain Users & Organizational Units</h3>
+        <ul>
+          <li><strong>Add Domain Users</strong> (Distribute IT student names to all dept/section/area):
+            <ul>
+              <li><strong>Academic Department</strong>
+                <ul>
+                  <li><strong>Basic Art and Sciences Department</strong></li>
+                  <li>BTVTE Electrical</li>
+                  <li>BTVTE Electronics</li>
+                  <li>BTVTE Computer Hardware</li>
+                  <li>BTVTE Computer Software</li>
+                  <li><strong>Electrical and Allied Department</strong></li>
+                  <li>Information Technology</li>
+                  <li>Electrical Engineering</li>
+                  <li>Electronics Engineering</li>
+                  <li>Instrumentation and Control Technology</li>
+                  <li>BET Mechatronics</li>
+                  <li><strong>Mechanical and Allied Department</strong></li>
+                  <li>Mechanical Engineering Technology</li>
+                  <li>RAC Engineering Technology</li>
+                  <li>Non Destructive Engineering Technology</li>
+                  <li>Electromechanical Engineering Technology</li>
+                  <li>Automotive Engineering Technology</li>
+                  <li>BET ElectroMechanical</li>
+                  <li><strong>Civil and Allied Department</strong></li>
+                  <li>Civil Engineering</li>
+                  <li>Civil Engineering Technology</li>
+                  <li>Environmental Science</li>
+                  <li>Chemical Engineering Technology</li>
+                </ul>
+              </li>
+              <li><strong>Administrative Department</strong>
+                <ul>
+                  <li>Registrar's Office</li>
+                  <li>Director's Office</li>
+                  <li>Research and Extension</li>
+                  <li>Human Resource and Management Office</li>
+                  <li>Finance Office</li>
+                  <li>Supply and Procurement</li>
+                  <li>Records Office</li>
+                  <li>Library Services</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Create domain users for each department/office and technology section. Use their real names when creating the domain account.</li>
+          <li>Create an organizational unit for each technology section or office (e.g., computer engineering, electronics, registrar, research, etc.).</li>
+          <li>All users can only log on to workstations (XP class A network, 7 class B network) that were assigned to their respective departments/offices:
+            <ul>
+              <li>Users → Properties → Computer Restrictions → select which computer</li>
+            </ul>
+          </li>
+          <li>All users should change their passwords every 30 days:
+            <ul>
+              <li>Go to Group Policy Management → create a GPO for the org unit Academic & Administrative</li>
+              <li>For academic: Academic Password | For Administrative: Administrative Password</li>
+              <li>Click Edit → Computer Config → Security Settings → Account Policies → Password Policies → Maximum Password Age → Properties → 30 days → Apply → OK</li>
+            </ul>
+          </li>
+          <li>Academic users can log on from 7:30 AM - 8:45 AM while administrative staff users can log on from 7:00 AM - 7:00 PM:
+            <ul>
+              <li>Select Users in each Department in academic → Properties → Account → Check "Log on hours" and select time range then log on permitted</li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </section>
     <section class="card-section reveal" style="margin-bottom:2rem;">

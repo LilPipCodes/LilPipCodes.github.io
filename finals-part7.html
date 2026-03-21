@@ -18,6 +18,114 @@
       <h2 class="section-title" style="text-align:center;font-size:1.4rem;font-weight:700;">Description</h2>
       <div style="max-width:700px;margin:1.2em auto 0 auto;padding:0 1em;text-align:left;">
         <p>Deploy and configure web server roles (IIS) to host academic web applications and services. Implement security baselines and plan patch deployment.</p>
+        <h3>Requirements</h3>
+        <ul>
+          <li>Create a simple university website to be hosted on IIS 7</li>
+          <li>Create a simple website for each department</li>
+          <li>Create subdirectories for each department in the wwwroot folder</li>
+        </ul>
+        <h3>Step 1: Install Web Server Role</h3>
+        <ol>
+          <li>Open Server Manager</li>
+          <li>Navigate to Roles section</li>
+          <li>Click "Add Role"</li>
+          <li>Select "Web Server (IIS)"</li>
+          <li>Click Next and follow prompts to install</li>
+        </ol>
+        <h3>Step 2: Add Web Server Features</h3>
+        <ul>
+          <li>During Web Server (IIS) role installation, ensure the following are checked:
+            <ul>
+              <li>Application Development</li>
+              <li>IIS 6 Management Compatibility</li>
+              <li>FTP Server</li>
+            </ul>
+          </li>
+          <li>Tool Download: Download AnyToISO Converter from: <a href="https://anytoiso-converter.en.download.it/" target="_blank">https://anytoiso-converter.en.download.it/</a></li>
+          <li>Install this tool for website content management.</li>
+        </ul>
+        <h3>Step 3: Create and Configure University Website</h3>
+        <ol>
+          <li>Open IIS Manager: Start → Administrative Tools → IIS Manager</li>
+          <li>Expand your server domain name</li>
+          <li>Right-click "Sites" → Select "Add Website"</li>
+          <li>Configure website properties:
+            <ul>
+              <li>Site Name: tupt</li>
+              <li>Physical Path: C:\inetpub\wwwroot\tupt</li>
+              <li>Navigate: Computer → inetpub → wwwroot</li>
+              <li>Create new folder named "tupt"</li>
+              <li>Select this path</li>
+              <li>Assigned IP Address: 172.31.0.31</li>
+              <li>Host Name: tupt.edu.ph</li>
+            </ul>
+          </li>
+          <li>Click OK to create the website</li>
+        </ol>
+        <h3>Step 4: Configure Output Caching</h3>
+        <ol>
+          <li>In IIS Manager, select the "tupt" website</li>
+          <li>Scroll through the features list and locate "Output Caching"</li>
+          <li>Right-click Output Caching → Select "Add" (or similar option)</li>
+          <li>Configure cache settings:
+            <ul>
+              <li>File name extension: .aspx</li>
+              <li>User Mode Caching: Check this option</li>
+            </ul>
+          </li>
+          <li>Click OK to save settings</li>
+        </ol>
+        <h3>Step 5: Prepare Website Content Structure</h3>
+        <ol>
+          <li>Navigate to: Local Disk → inetpub → wwwroot → tupt</li>
+          <li>Copy the "iisstart" HTML file into the tupt folder</li>
+          <li>Note: The "iisstart" folder/file serves as the index/home page</li>
+          <li>Create subdirectories for each department inside the tupt folder:</li>
+          <ul>
+            <li>Create "Academics" folder</li>
+            <li>Create "Administrative" folder</li>
+            <li>Create directories for each specific department (from Part 2)</li>
+            <li>Add appropriate HTML/ASP.NET content to each subdirectory</li>
+          </ul>
+          <li>Folder Structure Example:</li>
+        </ol>
+        <pre style="background:#f8f8f8;padding:1em;border-radius:0.7em;overflow-x:auto;">
+wwwroot/
+├── tupt/
+│   ├── iisstart.htm (index/home page)
+│   ├── Academics/
+│   ├── Administrative/
+│   ├── ComputerEngineering/
+│   ├── InformationTechnology/
+│   └── (other departments...)
+</pre>
+        <h3>Step 6: Access and Test Website</h3>
+        <ol>
+          <li>In IIS Manager:
+            <ul>
+              <li>Go back to Sites section</li>
+              <li>Right-click the "tupt" website</li>
+              <li>Select "Browse" (opens Internet Explorer automatically)</li>
+              <li>Test the website locally and verify pages load correctly</li>
+            </ul>
+          </li>
+          <li>Test website access from multiple machines:
+            <ul>
+              <li>Open Internet Explorer on Windows Server 2008</li>
+              <li>Navigate to: http://tupt.edu.ph/</li>
+              <li>Test on Windows 7 workstation: http://tupt.edu.ph/</li>
+              <li>Test on Windows XP workstation: http://tupt.edu.ph/</li>
+              <li>Verify all pages load correctly and are accessible from all client machines</li>
+            </ul>
+          </li>
+        </ol>
+        <p>✓ <strong>Web Server Setup Complete</strong></p>
+        <ul>
+          <li>Hosting the TUPT university website</li>
+          <li>Serving department-specific content</li>
+          <li>Caching .aspx pages for improved performance</li>
+          <li>Accessible from all client workstations</li>
+        </ul>
       </div>
     </section>
     <section class="card-section reveal" style="margin-bottom:2rem;">

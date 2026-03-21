@@ -18,6 +18,67 @@
       <h2 class="section-title" style="text-align:center;font-size:1.4rem;font-weight:700;">Description</h2>
       <div style="max-width:700px;margin:1.2em auto 0 auto;padding:0 1em;text-align:left;">
         <p>Implement RAID configurations for redundancy and performance in the server environment. Apply security baseline policies and deploy scripts via GPO.</p>
+        <h3>Overview</h3>
+        <p>Install and configure the following RAID levels:</p>
+        <ul>
+          <li><strong>RAID 0:</strong> Striped Volume</li>
+          <li><strong>RAID 1:</strong> Mirrored Volume</li>
+          <li><strong>Spanned Volume</strong></li>
+          <li><strong>RAID 5:</strong> Parity Volume</li>
+        </ul>
+        <h3>Step 1-4: Prepare Virtual Hard Disks</h3>
+        <ol>
+          <li>Clone Windows Server 2008 used for DHCP activity</li>
+          <li>After cloning, click Settings → Storage → click add attachment icon → Hard Disk</li>
+          <li>In medium selector:<br>Click Create<br>Check "Pre-allocate full size"<br>Allocate size: 50 MB<br>Click Finish</li>
+          <li>Repeat steps 2-3 to create 10 total hard disks</li>
+        </ol>
+        <h3>Step 5-9: Attach Disks and Initialize</h3>
+        <ol>
+          <li>Back to Settings → Storage → Attach all 10 hard disks to WS2008</li>
+          <li>Start WS2008</li>
+          <li>Click Start → Administrative Tools → Server Manager</li>
+          <li>Expand Storage → Click Disk Management</li>
+          <li>An "Initialize Disk" dialog box will appear showing all attached disks</li>
+          <li>Ensure partition style is set to MBR</li>
+          <li>Click OK to initialize all disks</li>
+          <li>After initialization: You will see Disk 0 (main VM storage) plus 10 additional disks (Disk 1-10) ready for RAID configuration.</li>
+        </ol>
+        <h3>RAID 0: Striped Volume</h3>
+        <ol>
+          <li>Right-click Disk 1 → Select "New Striped Volume"</li>
+          <li>Configuration wizard appears:<br>Click Next<br>Select Disk 2 → Click Add<br>Click Next → Next<br>Volume name: RAID0 or striped<br>Check "Perform a quick format"<br>Click Next → Finish</li>
+          <li>If a confirmation prompt appears, click Yes</li>
+          <li>Wait for volume creation to complete</li>
+        </ol>
+        <h3>RAID 1: Mirrored Volume</h3>
+        <ol>
+          <li>Right-click Disk 3 → Select "New Mirrored Volume"</li>
+          <li>Configuration wizard appears:<br>Click Next<br>Select Disk 4 → Click Add<br>Click Next → Next<br>Volume name: RAID1 or mirrored<br>Check "Perform a quick format"<br>Click Next → Finish</li>
+          <li>If a confirmation prompt appears, click Yes</li>
+          <li>Wait for volume creation to complete</li>
+        </ol>
+        <h3>Spanned Volume</h3>
+        <ol>
+          <li>Right-click Disk 5 → Select "New Spanned Volume"</li>
+          <li>Configuration wizard appears:<br>Click Next<br>Select Disk 6 → Click Add<br>Select Disk 7 → Click Add<br>Click Next → Next<br>Volume name: spanned<br>Check "Perform a quick format"<br>Click Next → Finish</li>
+          <li>If a confirmation prompt appears, click Yes</li>
+          <li>Wait for volume creation to complete</li>
+        </ol>
+        <h3>RAID 5: Parity Volume</h3>
+        <ol>
+          <li>Right-click Disk 8 → Select "New RAID 5 Volume"</li>
+          <li>Configuration wizard appears:<br>Click Next<br>Select Disk 9 → Click Add<br>Select Disk 10 → Click Add<br>Click Next → Next<br>Volume name: RAID5<br>Check "Perform a quick format"<br>Click Next → Finish</li>
+          <li>If a confirmation prompt appears, click Yes</li>
+          <li>Wait for volume creation to complete</li>
+        </ol>
+        <p>✓ <strong>RAID Installation Complete</strong></p>
+        <ul>
+          <li>RAID0: Striped volume using Disk 1-2 for improved performance</li>
+          <li>RAID1: Mirrored volume using Disk 3-4 for fault tolerance</li>
+          <li>Spanned: Spanned volume using Disk 5-7 for increased capacity</li>
+          <li>RAID5: Parity volume using Disk 8-10 for balanced performance and fault tolerance</li>
+        </ul>
       </div>
     </section>
     <section class="card-section reveal" style="margin-bottom:2rem;">

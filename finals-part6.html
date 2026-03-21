@@ -18,6 +18,67 @@
       <h2 class="section-title" style="text-align:center;font-size:1.4rem;font-weight:700;">Description</h2>
       <div style="max-width:700px;margin:1.2em auto 0 auto;padding:0 1em;text-align:left;">
         <p>Configure Remote Desktop services for remote administration and secure access. Design backup schedules and verify recovery procedures.</p>
+        <h4>Prerequisites</h4>
+        <ul>
+          <li>Start Windows XP VM</li>
+          <li>Start Windows 7 VM</li>
+          <li>Start Windows Server 2008 VM</li>
+        </ul>
+        <h4>Enable Remote Desktop on Windows 7</h4>
+        <ol>
+          <li>Open Active Directory Users & Computers (on Windows Server 2008)</li>
+          <li>Navigate to Computers container</li>
+          <li>Find and open your Windows 7 computer object</li>
+          <li>Right-click Windows 7 → Computer Properties</li>
+          <li>Go to Remote Settings tab</li>
+          <li>Check the option: Allow connections from running any version of Remote Desktop</li>
+          <li>Click Apply → OK</li>
+        </ol>
+        <h4>Connect to Windows 7 from Windows Server 2008</h4>
+        <ol>
+          <li>On Windows Server 2008, search for: Remote Desktop Connection</li>
+          <li>Open Remote Desktop Connection application</li>
+          <li>Enter the computer name/hostname of your Windows 7 machine</li>
+          <li>Click Connect</li>
+          <li>Enter Windows 7 user credentials and password</li>
+          <li>Wait for connection to establish</li>
+          <li>A confirmation prompt will appear on Windows 7 VM asking to accept connection</li>
+          <li>On Windows 7, click OK to accept</li>
+          <li>Windows Server 2008 now has remote access to Windows 7 desktop</li>
+        </ol>
+        <p>✓ Windows 7 Remote Desktop Connection Established</p>
+        <h4>Enable Remote Desktop on Windows XP</h4>
+        <ol>
+          <li>On Windows XP VM, right-click My Computer</li>
+          <li>Select Properties</li>
+          <li>Go to Remote tab</li>
+          <li>Verify that Allow users to connect remotely to this computer is checked</li>
+          <li>Click OK</li>
+        </ol>
+        <h4>Connect to Windows XP from Windows Server 2008</h4>
+        <ol>
+          <li>Important: Log off Windows XP first (do NOT stay logged in)</li>
+          <li>On Windows Server 2008, search for: Remote Desktop Connection</li>
+          <li>Open Remote Desktop Connection application</li>
+          <li>Enter the computer name/hostname of your Windows XP machine</li>
+          <li>Click Connect</li>
+          <li>A confirmation prompt appears on Windows XP</li>
+          <li>Click Yes to accept</li>
+          <li>Enter Windows XP user credentials</li>
+          <li>Windows Server 2008 now has remote access to Windows XP desktop</li>
+        </ol>
+        <p><strong>⚠ Important Reminder:</strong> Always log off from Windows XP before attempting to connect via Remote Desktop Connection. You cannot have the same user logged in simultaneously on both local console and remote connection.</p>
+        <h4>Verification</h4>
+        <ul>
+          <li>✓ Remote Desktop Setup Complete</li>
+          <li>Windows Server 2008 can now:</li>
+          <ul>
+            <li>Remote connect to Windows 7 via Remote Desktop</li>
+            <li>Remote connect to Windows XP via Remote Desktop</li>
+            <li>Manage both client workstations remotely</li>
+            <li>Access all resources and applications on remote machines</li>
+          </ul>
+        </ul>
       </div>
     </section>
     <section class="card-section reveal" style="margin-bottom:2rem;">
