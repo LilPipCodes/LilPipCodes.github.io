@@ -160,19 +160,36 @@ function headerTemplate(){
         <a href="types.html">Types</a>
         <a href="management.html">Management</a>
         <hr>
-        <a href="laboratory-activity-1.html">Activity 1: Installation and Activation of Windows Server 2008</a>
-        <a href="laboratory-activity-2.html">Activity 2: Active Directory: Creating Users</a>
-        <a href="laboratory-activity-3.html">Activity 3: DHCP Joining Wordstation in Domain</a>
-        <a href="laboratory-activity-4.html">Activity 4: RAID Installation</a>
-        <a href="laboratory-activity-5.html">Activity 5: Group Policy Management</a>
-        <a href="laboratory-activity-6.html">Activity 6: Web Server</a>
-        <a href="laboratory-activity-7.html">Activity 7: File Server</a>
-        <a href="laboratory-activity-8.html">Activity 8: WDS</a>
+        <a href="#">Lab Activities</a>
+        <div class="dropdown" aria-hidden>
+          <a href="laboratory-activity-1.html">Activity 1: Installation and Activation of Windows Server 2008</a>
+          <a href="laboratory-activity-2.html">Activity 2: Active Directory: Creating Users</a>
+          <a href="laboratory-activity-3.html">Activity 3: DHCP Joining Wordstation in Domain</a>
+          <a href="laboratory-activity-4.html">Activity 4: RAID Installation</a>
+          <a href="laboratory-activity-5.html">Activity 5: Group Policy Management</a>
+          <a href="laboratory-activity-6.html">Activity 6: Web Server</a>
+          <a href="laboratory-activity-7.html">Activity 7: File Server</a>
+          <a href="laboratory-activity-8.html">Activity 8: WDS</a>
+        </div>
         <hr>
-        <a href="windows-10.html">Windows 10</a>
-        <a href="windows-11.html">Windows 11</a>
+        <a href="#">Windows Installation</a>
+        <div class="dropdown" aria-hidden>
+          <a href="windows-95.html">Windows 95</a>
+          <a href="windows-98.html">Windows 98</a>
+          <a href="windows-nt.html">Windows NT</a>
+          <a href="windows-2000.html">Windows 2000</a>
+          <a href="windows-me.html">Windows ME</a>
+          <a href="windows-xp.html">Windows XP</a>
+          <a href="windows-server-2003.html">Windows Server 2003</a>
+          <a href="windows-vista.html">Windows Vista</a>
+          <a href="windows-server-2008.html">Windows Server 2008</a>
+          <a href="windows-7.html">Windows 7</a>
+          <a href="windows-8.html">Windows 8</a>
+          <a href="windows-10.html">Windows 10</a>
+          <a href="windows-11.html">Windows 11</a>
+        </div>
         <hr>
-        <a href="#">CASE STUDY</a>
+        <a href="#">Case Study</a>
         <div class="dropdown" aria-hidden>
           <a href="finals-part1.html">Part 1: Domain Controller</a>
           <a href="finals-part2.html">Part 2: Adding Users</a>
@@ -215,6 +232,32 @@ function wireHeader(){
   const btn = document.querySelector('.hamburger');
   const drawer = document.getElementById('mobile-drawer');
   if(btn && drawer){
-    btn.addEventListener('click',()=>drawer.classList.toggle('show'));
+    btn.addEventListener('click',()=>{
+      drawer.classList.toggle('show');
+      // Accessibility: update aria-hidden
+      if(drawer.classList.contains('show')){
+        drawer.setAttribute('aria-hidden','false');
+      }else{
+        drawer.setAttribute('aria-hidden','true');
+      }
+    });
+    // Optional: close drawer when clicking outside
+    document.addEventListener('click',function(e){
+      if(drawer.classList.contains('show') && !drawer.contains(e.target) && !btn.contains(e.target)){
+        drawer.classList.remove('show');
+        drawer.setAttribute('aria-hidden','true');
+      }
+    });
+
+    // Mobile submenu toggles
+    drawer.querySelectorAll('.mobile-links > a[href="#"]').forEach(function(parentLink){
+      parentLink.addEventListener('click',function(e){
+        e.preventDefault();
+        const dropdown = parentLink.nextElementSibling;
+        if(dropdown && dropdown.classList.contains('dropdown')){
+          dropdown.classList.toggle('show');
+        }
+      });
+    });
   }
 }

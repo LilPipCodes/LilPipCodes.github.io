@@ -1,3 +1,45 @@
+/* Mobile drawer dropdowns: hidden by default, show on tap */
+@media (max-width: 900px) {
+  #mobile-drawer .dropdown {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 1em;
+    margin: 0.2em 0 0.5em 0.5em;
+    box-shadow: 0 2px 12px 0 #a259ff22;
+    padding: 0.2em 0.5em;
+    z-index: 10;
+  }
+  #mobile-drawer .dropdown.show {
+    display: flex;
+  }
+  #mobile-drawer .mobile-links > a[href="#"] {
+    cursor: pointer;
+    font-weight: 600;
+    position: relative;
+  }
+  #mobile-drawer .mobile-links > a[href="#"]::after {
+    content: '▼';
+    font-size: 0.7em;
+    margin-left: 0.5em;
+    opacity: 0.7;
+  }
+}
+/* Make mobile drawer scrollable on small screens */
+@media (max-width: 900px) {
+  #mobile-drawer {
+    max-height: 80vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mobile-links {
+    max-height: 75vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+}
 /* === Mobile Enhancements (Recommended) === */
 @media (max-width: 600px) {
   .card-section {
